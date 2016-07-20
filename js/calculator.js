@@ -4,6 +4,10 @@ $(document).ready(function() {
   var formula = "";
   var calculation = 0;
 
+  $(".btn-default").click ( function() {
+    alert($(this).html());
+  })
+
   $("#btn-one").on("click", function() {
     number = number + "1";
     formula = formula + number;
@@ -83,7 +87,7 @@ $(document).ready(function() {
   })
 
   $("#btn-ce").on("click", function(){
-    number = number.substring(0, number.length - 1);;
+    number = number.substring(0, number.length - 1);
     console.log(number);
     $("#numberScreen").html(number);
     $("#operation").html(formula);
