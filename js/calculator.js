@@ -13,7 +13,15 @@ $(document).ready(function() {
   })
 
   $(".btn-push").click(function(){
-    if(sign == ""){
+    if(/([\-\+\/\*])$/.test(formula.substr(formula.length - 1))){
+      number = "";
+      number = number + $(this).attr("value");
+      formula = formula + number;
+      console.log(number);
+      $("#numberScreen").html(number);
+      $("#operation").html(formula);
+    }
+    else {
       number = number + $(this).attr("value");
       formula = number;
       console.log(number);
