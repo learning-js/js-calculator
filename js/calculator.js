@@ -23,7 +23,7 @@ $(document).ready(function() {
     }
     else {
       number = number + $(this).attr("value");
-      formula = number;
+      formula = formula + $(this).attr("value");
       console.log(number);
       $("#numberScreen").html(number);
       $("#operation").html(formula);
