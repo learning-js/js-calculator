@@ -5,10 +5,13 @@ $(document).ready(function() {
   var calculation = 0;
 
   $(".btn-push").click(function(){
-    number = number + $(this).attr("value");
-    console.log(number);
-    $("#numberScreen").html(number);
-    $("#operation").html(formula);
+    if(symbol == ""){
+      number = number + $(this).attr("value");
+      formula = number;
+      console.log(number);
+      $("#numberScreen").html(number);
+      $("#operation").html(formula);
+    }
   })
 
   $("#btn-ac").on("click", function(){
