@@ -7,7 +7,7 @@ $(document).ready(function() {
   $(".btn-sign").click(function(){
     sign = $(this).attr("value");
     $("#numberScreen").html(sign);
-    formula = number + sign
+    formula = formula + sign;
     number = "";
     $("#operation").html(formula);
   })
@@ -16,7 +16,7 @@ $(document).ready(function() {
     if(/([\-\+\/\*])$/.test(formula.substr(formula.length - 1))){
       number = "";
       number = number + $(this).attr("value");
-      formula = formula + number;
+      formula = formula + $(this).attr("value");
       console.log(number);
       $("#numberScreen").html(number);
       $("#operation").html(formula);
