@@ -25,7 +25,10 @@ $(document).ready(function() {
       number = number + $(this).attr("value");
       if(number.length > 10){
         console.log("el número es demasiado grande");
-        $("#numberScreen").html("Too long");
+        $("#numberScreen").html(0);
+        number = "";
+        formula = "";
+        $("#operation").html("Too long");
       } else {
           formula = formula + $(this).attr("value");
           console.log(number);
