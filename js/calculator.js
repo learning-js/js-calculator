@@ -23,10 +23,15 @@ $(document).ready(function() {
     }
     else {
       number = number + $(this).attr("value");
-      formula = formula + $(this).attr("value");
-      console.log(number);
-      $("#numberScreen").html(number);
-      $("#operation").html(formula);
+      if(number.length > 10){
+        console.log("el número es demasiado grande");
+        $("#numberScreen").html("Too long");
+      } else {
+          formula = formula + $(this).attr("value");
+          console.log(number);
+          $("#numberScreen").html(number);
+          $("#operation").html(formula);
+        }
     }
   })
 

@@ -18,6 +18,7 @@ h1 {
   font-family: 'Quicksand', sans-serif;
 }
 .screen{
+  font-size: 0.8em;
   background-color: #FDD692;
   border: 1px solid #9f865c;
   box-shadow: inset 0 0 0.5em #9f865c;
