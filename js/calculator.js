@@ -41,6 +41,7 @@ $(document).ready(function() {
   $("#btn-ce").on("click", function(){
     if(number.length <= 1){
       $("#numberScreen").html(0);
+      number = "";
       formula = formula.substring(0, number.length - 1);
       $("#operation").html(formula);
     }
