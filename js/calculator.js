@@ -39,10 +39,18 @@ $(document).ready(function() {
   })
 
   $("#btn-ce").on("click", function(){
-    number = number.substring(0, number.length - 1);
-    console.log(number);
-    $("#numberScreen").html(number);
-    $("#operation").html(formula);
+    if(number.length <= 1){
+      $("#numberScreen").html(0);
+      formula = formula.substring(0, number.length - 1);
+      $("#operation").html(formula);
+    }
+    else {
+      number = number.substring(0, number.length - 1);
+      formula = formula.substring(0, formula.length - 1);
+      console.log(number);
+      $("#numberScreen").html(number);
+      $("#operation").html(formula);
+    }
   })
 
 })
