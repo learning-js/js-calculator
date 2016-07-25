@@ -3,7 +3,6 @@ $(document).ready(function() {
   var numberTwo = "";
   var sign = "";
   var formula = "";
-  var calculation = 0;
 
 /*///////// FUNCTION THAT RESETS ALL VAR /////////////
 
@@ -17,23 +16,23 @@ function resetVar(a, b, c, d, e){
 
 ///////// CALCULATION /////////////
 
-function calculate(numberA, sign, numberB, result){
+function calculate(numberA, sign, numberB){
   switch (sign){
     case "+":
-      result = numberA + numberB;
-      console.log(result);
+      var result = parseInt(numberA) + parseInt(numberB);
+      return(result);
       break;
     case "-":
-      result = numberA - numberB;
-      console.log(result);
+      var result = parseInt(numberA) - parseInt(numberB);
+      return(result);
       break;
     case "/":
-      result = numberA / numberB;
-      console.log(result);
+      var result = parseInt(numberA) / parseInt(numberB);
+      return(result);
       break;
     case "x":
-      result = numberA * numberB;
-      console.log(result);
+      var result = parseInt(numberA) * parseInt(numberB);
+      return(result);
       break;
   }
 }
@@ -41,24 +40,20 @@ function calculate(numberA, sign, numberB, result){
 ///////// PUSH A NUMBER BUTTON /////////////
 
 $(".btn-push").click(function(){
-  if(sign !== ""){
+  if(sign !== "" && numberTwo == ""){
     numberTwo = numberTwo + $(this).attr("value");
     formula = formula + $(this).attr("value");
-    console.log(numberOne, sign, numberTwo);
-    console.log(numberTwo);
     $("#numberScreen").html(numberTwo);
     $("#operation").html(formula);
   }
     else {
       numberOne = numberOne + $(this).attr("value");
       if(numberOne.length > 10){
-        console.log("el número es demasiado grande");
         $("#numberScreen").html(0);
         resetVar(numberOne, numberTwo, sign, formula, calculation);
         $("#operation").html("Too long");
       } else {
           formula = formula + $(this).attr("value");
-          console.log(numberOne);
           $("#numberScreen").html(numberOne);
           $("#operation").html(formula);
         }
@@ -78,7 +73,10 @@ $(".btn-push").click(function(){
       $("#operation").html(formula);
     }
     else{
-      calculation = parseInt(numberOne)
+      numberOne = calculate(numberOne, sign, numberTwo);
+      numberTwo = "";
+      formula = formula + sign;
+      $("#operation").html(formula);
     }
   })
 
@@ -110,6 +108,13 @@ $(".btn-push").click(function(){
       $("#numberScreen").html(number);
       $("#operation").html(formula);
     }
+  })
+
+  ///////// PUSH EQUALS ////////////
+
+  $(".btn-equals").on("click", function(){
+    numberOne = calculate(numberOne, sign, numberTwo);
+    console.log(numberOne);
   })
 
 })
