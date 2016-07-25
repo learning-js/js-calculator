@@ -5,7 +5,7 @@ $(document).ready(function() {
   var formula = "";
   var calculation = 0;
 
-///////// PUSH A NUMBER BUTTON /////////////
+/*///////// FUNCTION THAT RESETS ALL VAR /////////////
 
 function resetVar(a, b, c, d, e){
   a = "";
@@ -13,6 +13,29 @@ function resetVar(a, b, c, d, e){
   c = "";
   d = "";
   e = 0;
+} */
+
+///////// CALCULATION /////////////
+
+function calculate(numberA, sign, numberB, result){
+  switch (sign){
+    case "+":
+      result = numberA + numberB;
+      console.log(result);
+      break;
+    case "-":
+      result = numberA - numberB;
+      console.log(result);
+      break;
+    case "/":
+      result = numberA / numberB;
+      console.log(result);
+      break;
+    case "x":
+      result = numberA * numberB;
+      console.log(result);
+      break;
+  }
 }
 
 ///////// PUSH A NUMBER BUTTON /////////////
@@ -21,6 +44,7 @@ $(".btn-push").click(function(){
   if(sign !== ""){
     numberTwo = numberTwo + $(this).attr("value");
     formula = formula + $(this).attr("value");
+    console.log(numberOne, sign, numberTwo);
     console.log(numberTwo);
     $("#numberScreen").html(numberTwo);
     $("#operation").html(formula);
@@ -47,11 +71,14 @@ $(".btn-push").click(function(){
     if(numberOne == ""){
       $("#operation").html("Not valid");
     }
-    else{
+    else if(sign == ""){
       sign = $(this).attr("value");
       $("#numberScreen").html(sign);
       formula = formula + sign;
       $("#operation").html(formula);
+    }
+    else{
+      calculation = parseInt(numberOne)
     }
   })
 
@@ -70,10 +97,10 @@ $(".btn-push").click(function(){
 ///////// PUSH CE ////////////
 
   $("#btn-ce").on("click", function(){
-    if(number.length <= 1){
+    if(numberOne.length <= 1){
       $("#numberScreen").html(0);
-      number = "";
-      formula = formula.substring(0, number.length - 1);
+      numberOne = "";
+      formula = formula.substring(0, numberOne.length - 1);
       $("#operation").html(formula);
     }
     else {
