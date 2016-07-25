@@ -7,12 +7,12 @@ $(document).ready(function() {
 
 ///////// PUSH A NUMBER BUTTON /////////////
 
-function resetVar(number1, number2, sign, formula, calculation){
-  number1 = "";
-  number2 = "";
-  sign = "";
-  formula = "";
-  calculation = 0;
+function resetVar(a, b, c, d, e){
+  a = "";
+  b = "";
+  c = "";
+  d = "";
+  e = 0;
 }
 
 ///////// PUSH A NUMBER BUTTON /////////////
@@ -58,10 +58,13 @@ $(".btn-push").click(function(){
 ///////// PUSH AC ////////////
 
   $("#btn-ac").on("click", function(){
-    resetVar(numberOne, numberTwo, sign, formula, calculation);
-    console.log(number);
+    numberOne = "";
+    numberTwo = "";
+    sign = "";
+    formula = "";
+    calculation = 0;
     $("#numberScreen").html(0);
-    $("#operation").html(formula);
+    $("#operation").html("");
   })
 
 ///////// PUSH CE ////////////
