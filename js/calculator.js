@@ -7,27 +7,35 @@ $(document).ready(function() {
 
 ///////// PUSH A NUMBER BUTTON /////////////
 
+function resetVar(number1, number2, sign, formula, calculation){
+  number1 = "";
+  number2 = "";
+  sign = "";
+  formula = "";
+  calculation = 0;
+}
+
+///////// PUSH A NUMBER BUTTON /////////////
+
 $(".btn-push").click(function(){
-  if(/([\-\+\/\*])$/.test(formula.substr(formula.length - 1))){
-    number = "";
-    number = number + $(this).attr("value");
+  if(sign !== ""){
+    numberTwo = numberTwo + $(this).attr("value");
     formula = formula + $(this).attr("value");
-    console.log(number);
-    $("#numberScreen").html(number);
+    console.log(numberTwo);
+    $("#numberScreen").html(numberTwo);
     $("#operation").html(formula);
   }
     else {
-      number = number + $(this).attr("value");
-      if(number.length > 10){
+      numberOne = numberOne + $(this).attr("value");
+      if(numberOne.length > 10){
         console.log("el número es demasiado grande");
         $("#numberScreen").html(0);
-        number = "";
-        formula = "";
+        resetVar(numberOne, numberTwo, sign, formula, calculation);
         $("#operation").html("Too long");
       } else {
           formula = formula + $(this).attr("value");
-          console.log(number);
-          $("#numberScreen").html(number);
+          console.log(numberOne);
+          $("#numberScreen").html(numberOne);
           $("#operation").html(formula);
         }
     }
@@ -50,8 +58,7 @@ $(".btn-push").click(function(){
 ///////// PUSH AC ////////////
 
   $("#btn-ac").on("click", function(){
-    number = "";
-    formula = "";
+    resetVar(numberOne, numberTwo, sign, formula, calculation);
     console.log(number);
     $("#numberScreen").html(0);
     $("#operation").html(formula);
