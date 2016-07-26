@@ -21,19 +21,15 @@ function calculate(numberA, sign, numberB){
     case "+":
       var result = parseInt(numberA) + parseInt(numberB);
       return(result);
-      break;
     case "-":
       var result = parseInt(numberA) - parseInt(numberB);
       return(result);
-      break;
     case "/":
       var result = parseInt(numberA) / parseInt(numberB);
       return(result);
-      break;
     case "x":
       var result = parseInt(numberA) * parseInt(numberB);
       return(result);
-      break;
   }
 }
 
