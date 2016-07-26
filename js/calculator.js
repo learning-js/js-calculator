@@ -55,7 +55,7 @@ $(".btn-push").click(function(){
           $("#operation").html(formula);
         }
     }
-  })
+  });
 
 ///////// PUSH A SIGN ////////////
 
@@ -76,7 +76,7 @@ $(".btn-push").click(function(){
       formula = formula + sign;
       $("#operation").html(formula);
     }
-  })
+  });
 
 ///////// PUSH AC ////////////
 
@@ -88,7 +88,7 @@ $(".btn-push").click(function(){
     calculation = 0;
     $("#numberScreen").html(0);
     $("#operation").html("");
-  })
+  });
 
 ///////// PUSH CE ////////////
 
@@ -106,7 +106,7 @@ $(".btn-push").click(function(){
       $("#numberScreen").html(number);
       $("#operation").html(formula);
     }
-  })
+  });
 
   ///////// PUSH EQUALS ////////////
 
@@ -114,6 +114,6 @@ $(".btn-push").click(function(){
     numberOne = calculate(numberOne, sign, numberTwo);
     numberTwo = "";
     console.log(numberOne, numberTwo, sign);
-  })
+  });
 
 })
