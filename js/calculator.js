@@ -37,7 +37,7 @@ function calculate(numberA, sign, numberB){
 ///////// PUSH A NUMBER BUTTON /////////////
 
 $(".btn-push").click(function(){
-  if(sign !== "" && numberTwo == ""){
+  if(sign !== ""){
     numberTwo = numberTwo + $(this).attr("value");
     formula = formula + $(this).attr("value");
     $("#numberScreen").html(numberTwo);
