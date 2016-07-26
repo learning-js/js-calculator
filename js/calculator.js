@@ -111,10 +111,7 @@ $(".btn-push").click(function(){
   ///////// PUSH EQUALS ////////////
 
   $(".btn-equals").on("click", function(){
-    if(sign == ""){
-
-    }
-    else {
+    if(sign !== ""){
       numberOne = calculate(numberOne, sign, numberTwo);
       numberTwo = "";
       sign = "";
