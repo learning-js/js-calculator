@@ -111,11 +111,16 @@ $(".btn-push").click(function(){
   ///////// PUSH EQUALS ////////////
 
   $(".btn-equals").on("click", function(){
-    numberOne = calculate(numberOne, sign, numberTwo);
-    numberTwo = "";
-    sign = "";
-    $("#numberScreen").html(numberOne);
-    console.log(numberOne, numberTwo, sign);
+    if(sign == ""){
+
+    }
+    else {
+      numberOne = calculate(numberOne, sign, numberTwo);
+      numberTwo = "";
+      sign = "";
+      $("#numberScreen").html(numberOne);
+      console.log(numberOne, numberTwo, sign);
+    }
   });
 
 })
