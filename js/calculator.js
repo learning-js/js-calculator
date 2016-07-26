@@ -75,6 +75,7 @@ $(".btn-push").click(function(){
     else{
       numberOne = calculate(numberOne, sign, numberTwo);
       numberTwo = "";
+      sign = $(this).attr("value");
       formula = formula + sign;
       $("#operation").html(formula);
     }
@@ -114,7 +115,8 @@ $(".btn-push").click(function(){
 
   $(".btn-equals").on("click", function(){
     numberOne = calculate(numberOne, sign, numberTwo);
-    console.log(numberOne);
+    numberTwo = "";
+    console.log(numberOne, numberTwo, sign);
   })
 
 })
