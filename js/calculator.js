@@ -100,11 +100,18 @@ $(".btn-push").click(function(){
       $("#operation").html(formula);
     }
     else {
-      number = number.substring(0, number.length - 1);
-      formula = formula.substring(0, formula.length - 1);
-      console.log(number);
-      $("#numberScreen").html(number);
-      $("#operation").html(formula);
+      if(numberTwo == "") {
+        numberOne = numberOne.substring(0, numberOne.length - 1);
+        formula = formula.substring(0, formula.length - 1);
+        $("#numberScreen").html(numberOne);
+        $("#operation").html(formula);
+      }
+      else {
+        numberTwo = numberTwo.substring(0, numberTwo.length - 1);
+        formula = formula.substring(0, formula.length - 1);
+        $("#numberScreen").html(numberTwo);
+        $("#operation").html(formula);
+      }
     }
   });
 
