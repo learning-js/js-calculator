@@ -20,16 +20,16 @@ function calculate(numberA, sign, numberB){
   var result;
   switch (sign){
     case "+":
-      result = parseInt(numberA) + parseInt(numberB);
+      result = parseFloat(numberA) + parseFloat(numberB);
       return(result);
     case "-":
-      result = parseInt(numberA) - parseInt(numberB);
+      result = parseFloat(numberA) - parseFloat(numberB);
       return(result);
     case "/":
-      result = parseInt(numberA) / parseInt(numberB);
+      result = parseFloat(numberA) / parseFloat(numberB);
       return(result);
     case "x":
-      result = parseInt(numberA) * parseInt(numberB);
+      result = parseFloat(numberA) * parseFloat(numberB);
       return(result);
   }
 }
