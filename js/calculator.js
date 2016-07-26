@@ -113,6 +113,7 @@ $(".btn-push").click(function(){
   $(".btn-equals").on("click", function(){
     numberOne = calculate(numberOne, sign, numberTwo);
     numberTwo = "";
+    $("#numberScreen").html(numberOne);
     console.log(numberOne, numberTwo, sign);
   })
 
