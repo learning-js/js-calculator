@@ -17,23 +17,20 @@ function resetVar(a, b, c, d, e){
 ///////// CALCULATION /////////////
 
 function calculate(numberA, sign, numberB){
+  var result;
   switch (sign){
     case "+":
-      var result = parseInt(numberA) + parseInt(numberB);
+      result = parseInt(numberA) + parseInt(numberB);
       return(result);
-      break;
     case "-":
-      var result = parseInt(numberA) - parseInt(numberB);
+      result = parseInt(numberA) - parseInt(numberB);
       return(result);
-      break;
     case "/":
-      var result = parseInt(numberA) / parseInt(numberB);
+      result = parseInt(numberA) / parseInt(numberB);
       return(result);
-      break;
     case "x":
-      var result = parseInt(numberA) * parseInt(numberB);
+      result = parseInt(numberA) * parseInt(numberB);
       return(result);
-      break;
   }
 }
 
