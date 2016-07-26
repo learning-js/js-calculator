@@ -3,6 +3,7 @@ $(document).ready(function() {
   var numberTwo = "";
   var sign = "";
   var formula = "";
+  var finished = false;
 
 /*///////// FUNCTION THAT RESETS ALL VAR /////////////
 
@@ -44,20 +45,29 @@ $(".btn-push").click(function(){
     $("#operation").html(formula);
   }
     else {
+      if(finished){
+        numberOne = $(this).attr("value");
+        formula = $(this).attr("value");
+        finished = false;
+        $("#numberScreen").html(numberOne);
+        $("#operation").html(formula);
+      }
+      else {
       numberOne = numberOne + $(this).attr("value");
-      if(numberOne.length > 10){
-        $("#numberScreen").html(0);
-        resetVar(numberOne, numberTwo, sign, formula, calculation);
-        $("#operation").html("Too long");
-      } else {
-          formula = formula + $(this).attr("value");
-          $("#numberScreen").html(numberOne);
-          $("#operation").html(formula);
+          if(numberOne.length > 10){
+            $("#numberScreen").html(0);
+            resetVar(numberOne, numberTwo, sign, formula, calculation);
+            $("#operation").html("Too long");
+          } else {
+              formula = formula + $(this).attr("value");
+              $("#numberScreen").html(numberOne);
+              $("#operation").html(formula);
+            }
         }
-    }
+      }
   });
 
-///////// PUSH A NUMBER BUTTON /////////////
+///////// PUSH POINT BUTTON /////////////
 
 $("#btn-point").click(function(){
   if(sign == "" && numberOne.indexOf(".") == -1){
@@ -103,6 +113,7 @@ $("#btn-point").click(function(){
     sign = "";
     formula = "";
     calculation = 0;
+    finished = false;
     $("#numberScreen").html(0);
     $("#operation").html("");
   });
@@ -139,6 +150,7 @@ $("#btn-point").click(function(){
       numberOne = calculate(numberOne, sign, numberTwo);
       numberTwo = "";
       sign = "";
+      finished = true;
       $("#numberScreen").html(numberOne);
     }
   });
