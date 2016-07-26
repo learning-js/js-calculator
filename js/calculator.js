@@ -61,14 +61,12 @@ $(".btn-push").click(function(){
 
 $("#btn-point").click(function(){
   if(sign == "" && numberOne.indexOf(".") == -1){
-    console.log("entro 1");
     numberOne = numberOne + $(this).attr("value");
     formula = formula + $(this).attr("value");
     $("#numberScreen").html(numberOne);
     $("#operation").html(formula);
   }
   if(sign !== "" && numberTwo.indexOf(".") == -1){
-    console.log("entro 2");
     numberTwo = numberTwo + $(this).attr("value");
     formula = formula + $(this).attr("value");
     $("#numberScreen").html(numberTwo);
@@ -142,7 +140,6 @@ $("#btn-point").click(function(){
       numberTwo = "";
       sign = "";
       $("#numberScreen").html(numberOne);
-      console.log(numberOne, numberTwo, sign);
     }
   });
 
